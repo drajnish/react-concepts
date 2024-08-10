@@ -5,6 +5,7 @@ import CommentsList from './pages/comments';
 import RecipeList from './pages/recipe';
 import RecipeDetails from './pages/recipe-details';
 import PageNotFound from './pages/not-found';
+import Layout from './components/layout';
 // import UseReducerExample from './components/useReducer';
 // import ContextButton from './components/context/button';
 // import ContextText from './components/context/text';
@@ -21,39 +22,38 @@ function App() {
       {/* <UseReducerExample /> */}
       {/* <FormComponent /> */}
       <div>
-        <ul style={{ listStyleType: 'none' }}>
-          <li
-            style={{
-              backgroundColor: 'lightgray',
-              display: 'inline-block',
-              margin: '5px',
-              padding: '5px 10px',
-              borderRadius: '15px',
-              cursor: 'pointer',
-            }}
-            onClick={() => navigate('/recipe')}
-          >
-            Recipe
-          </li>
-          <li
-            style={{
-              backgroundColor: 'lightgray',
-              display: 'inline-block',
-              margin: '5px',
-              padding: '5px 10px',
-              borderRadius: '15px',
-              cursor: 'pointer',
-            }}
-            onClick={() => navigate('/comments')}
-          >
-            Comments
-          </li>
-        </ul>
+        <button
+          style={{
+            backgroundColor: 'lightgray',
+            display: 'inline-block',
+            margin: '5px',
+            padding: '5px 10px',
+            borderRadius: '15px',
+          }}
+          onClick={() => navigate('/home/recipe')}
+        >
+          Recipe
+        </button>
+        <button
+          style={{
+            backgroundColor: 'lightgray',
+            display: 'inline-block',
+            margin: '5px',
+            padding: '5px 10px',
+            borderRadius: '15px',
+          }}
+          onClick={() => navigate('/home/comments')}
+        >
+          Comments
+        </button>
       </div>
       <Routes>
-        <Route path="/recipe" element={<RecipeList />} />
-        <Route path="/comments" element={<CommentsList />} />
-        <Route path="/recipe/:id" element={<RecipeDetails />} />
+        <Route path="/home" element={<Layout />}>
+          <Route path="recipe" element={<RecipeList />} />
+          <Route path="comments" element={<CommentsList />} />
+          <Route path="recipe/:id" element={<RecipeDetails />} />
+        </Route>
+
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </>
