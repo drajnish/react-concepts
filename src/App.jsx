@@ -1,4 +1,5 @@
-import { useNavigate, useRoutes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+// import { Route, Routes, useNavigate, useRoutes } from 'react-router-dom';
 import './App.css';
 // import FormComponent from './components/form';
 import CommentsList from './pages/comments';
@@ -11,33 +12,33 @@ import Layout from './components/layout';
 // import ContextText from './components/context/text';
 // import ProductList from './components/products';
 
-function CustomRoutes() {
-  const element = useRoutes([
-    {
-      path: '/home',
-      element: <Layout />,
-      children: [
-        {
-          path: 'recipe',
-          element: <RecipeList />,
-        },
-        {
-          path: 'comments',
-          element: <CommentsList />,
-        },
-        {
-          path: 'recipe/:id',
-          element: <RecipeDetails />,
-        },
-      ],
-    },
-    {
-      path: '*',
-      element: <PageNotFound />,
-    },
-  ]);
-  return element;
-}
+// function CustomRoutes() {
+//   const element = useRoutes([
+//     {
+//       path: '/home',
+//       element: <Layout />,
+//       children: [
+//         {
+//           path: 'recipe',
+//           element: <RecipeList />,
+//         },
+//         {
+//           path: 'comments',
+//           element: <CommentsList />,
+//         },
+//         {
+//           path: 'recipe/:id',
+//           element: <RecipeDetails />,
+//         },
+//       ],
+//     },
+//     {
+//       path: '*',
+//       element: <PageNotFound />,
+//     },
+//   ]);
+//   return element;
+// }
 
 function App() {
   const navigate = useNavigate();
@@ -75,7 +76,7 @@ function App() {
           Comments
         </button>
       </div>
-      {/* <Routes>
+      <Routes>
         <Route path="/home" element={<Layout />}>
           <Route path="recipe" element={<RecipeList />} />
           <Route path="comments" element={<CommentsList />} />
@@ -83,8 +84,8 @@ function App() {
         </Route>
 
         <Route path="*" element={<PageNotFound />} />
-      </Routes> */}
-      <CustomRoutes />
+      </Routes>
+      {/* <CustomRoutes /> */}
     </>
   );
 }
