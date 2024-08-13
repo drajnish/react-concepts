@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import UseMemoHook from '../usememo-hook';
 
 function Hooks() {
   const countValue = useRef(0);
@@ -20,12 +21,17 @@ function Hooks() {
 
   return (
     <div>
-      <h1>Hooks (useRef, useCallback and useMemo)</h1>
+      <h1>Hooks</h1>
+      <h2>useRef Hook</h2>
       <button onClick={handleClick}>Click Me</button>
       <div ref={divRefEl}>
         Div Ref element text color changed using useRef hook
       </div>
       <input type="text" name="useRef" ref={inputRefEl} />
+      <div>
+        <h2>useMemo Hook</h2>
+        <UseMemoHook />
+      </div>
     </div>
   );
 }
