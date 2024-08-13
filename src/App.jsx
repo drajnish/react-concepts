@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 // import { Route, Routes, useNavigate, useRoutes } from 'react-router-dom';
 import './App.css';
 // import FormComponent from './components/form';
@@ -7,6 +7,7 @@ import RecipeList from './pages/recipe';
 import RecipeDetails from './pages/recipe-details';
 import PageNotFound from './pages/not-found';
 import Layout from './components/layout';
+import ReactHookForm from './pages/react-hook-form';
 // import UseReducerExample from './components/useReducer';
 // import ContextButton from './components/context/button';
 // import ContextText from './components/context/text';
@@ -41,17 +42,17 @@ import Layout from './components/layout';
 // }
 
 function App() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   return (
     <>
-      <h1>React Router DOM</h1>
+      {/* <h1>React Router DOM</h1> */}
       {/* <ProductList /> */}
       {/* <ContextButton />
       <ContextText /> */}
       {/* <UseReducerExample /> */}
       {/* <FormComponent /> */}
       <div>
-        <button
+        {/* <button
           style={{
             backgroundColor: 'lightgray',
             display: 'inline-block',
@@ -73,14 +74,15 @@ function App() {
           }}
           onClick={() => navigate('/home/comments')}
         >
-          Comments
-        </button>
+          React Hook Form
+        </button> */}
       </div>
       <Routes>
         <Route path="/home" element={<Layout />}>
           <Route path="recipe" element={<RecipeList />} />
           <Route path="comments" element={<CommentsList />} />
           <Route path="recipe/:id" element={<RecipeDetails />} />
+          <Route path="react-hook-form" element={<ReactHookForm />} />
         </Route>
 
         <Route path="*" element={<PageNotFound />} />
