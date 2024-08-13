@@ -8,6 +8,7 @@ import RecipeDetails from './pages/recipe-details';
 import PageNotFound from './pages/not-found';
 import Layout from './components/layout';
 import ReactHookForm from './pages/react-hook-form';
+import Hooks from './pages/hooks';
 // import UseReducerExample from './components/useReducer';
 // import ContextButton from './components/context/button';
 // import ContextText from './components/context/text';
@@ -83,6 +84,7 @@ function App() {
           <Route path="comments" element={<CommentsList />} />
           <Route path="recipe/:id" element={<RecipeDetails />} />
           <Route path="react-hook-form" element={<ReactHookForm />} />
+          <Route path="hooks" element={<Hooks />} />
         </Route>
 
         <Route path="*" element={<PageNotFound />} />
