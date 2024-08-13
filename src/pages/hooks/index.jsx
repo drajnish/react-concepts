@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import UseMemoHook from '../usememo-hook';
+import UseCallbackHook from '../usecallback-hook';
 
 function Hooks() {
   const countValue = useRef(0);
@@ -31,6 +32,10 @@ function Hooks() {
       <div>
         <h2>useMemo Hook</h2>
         <UseMemoHook />
+      </div>
+      <div>
+        <h2>useCallback Hook</h2>
+        <UseCallbackHook />
       </div>
     </div>
   );
